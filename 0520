@@ -12,7 +12,7 @@ for i in B:
     x += 1
 print(result)
 
-#1003  #다시 수정 필요
+#1003  #다시 수정 
 def sequence(x):
     zero = 0
     one = 0    

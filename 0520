@@ -1,0 +1,36 @@
+#2588
+# A, B = input().strip().split( )
+A = input()
+B = input()
+
+B = B[::-1]
+result = 0
+x = 0
+for i in B:
+    print(int(A)*int(i))
+    result += (int(A)*int(i))*10**x
+    x += 1
+print(result)
+
+#1003  #다시 수정 필요
+def sequence(x):
+    zero = 0
+    one = 0    
+    if x == 1:
+    
+        return 0
+
+    elif x == 2:
+        
+        return 1
+    else:
+        
+        x = sequence(x-1) + sequence(x-2)
+        if x == 1:
+            one += 1
+        elif x == 0:
+            zero += 1
+        print(zero, one)
+        return x
+
+print(sequence(int(input("숫자를 입력하세요 :"))))

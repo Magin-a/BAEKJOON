@@ -12,25 +12,37 @@ for i in B:
     x += 1
 print(result)
 
-#1003  #다시 수정 
-def sequence(x):
-    zero = 0
-    one = 0    
-    if x == 1:
-    
+#1003  # (출력문은 정답 but 시간초과)
+def f(n):
+    num1 = 0
+    num2 = 0
+
+    if n == 0:
         return 0
 
-    elif x == 2:
-        
+    elif n == 1:
         return 1
-    else:
         
-        x = sequence(x-1) + sequence(x-2)
-        if x == 1:
-            one += 1
-        elif x == 0:
-            zero += 1
-        print(zero, one)
-        return x
+    else:
+        result = f(n-1) + f(n-2)
+        return result
 
-print(sequence(int(input("숫자를 입력하세요 :"))))
+# print(f(int(input())))
+i = int(input())    
+for x in range(i):
+    a = int(input())
+    result = f(a)
+
+    if a == 0 and result == 0:
+        print(1, 0)
+
+    elif a == 1 and result == 1:
+        print(0, 1)
+    
+    elif a == 2 and result == 1:
+        print(1, 1)
+    
+    elif a == 3 and result == 2:
+        print(1, 2)
+    else:
+        pass

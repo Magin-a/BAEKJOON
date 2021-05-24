@@ -1,0 +1,12 @@
+#1009 분산처리
+my_num = int(input())
+def result(a, b):
+    num_result = list(str(a**b))
+    num_result = num_result[len(num_result)-1]
+    return num_result
+
+
+for i in range(int(my_num)):
+    num = map(int, input().strip().split( ))
+    x, y = num 
+    print(result(x, y))

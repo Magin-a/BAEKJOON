@@ -12,37 +12,15 @@ for i in B:
     x += 1
 print(result)
 
-#1003  # (출력문은 정답 but 시간초과)
-def f(n):
-    num1 = 0
-    num2 = 0
+#1003 
+zero = [1, 0]
+one = [0, 1]
 
-    if n == 0:
-        return 0
+for i in range(2,41):
+    zero.append(zero[i-1]+zero[i-2])
+    one.append(one[i-1]+one[i-2])
 
-    elif n == 1:
-        return 1
-        
-    else:
-        result = f(n-1) + f(n-2)
-        return result
-
-# print(f(int(input())))
-i = int(input())    
-for x in range(i):
-    a = int(input())
-    result = f(a)
-
-    if a == 0 and result == 0:
-        print(1, 0)
-
-    elif a == 1 and result == 1:
-        print(0, 1)
-    
-    elif a == 2 and result == 1:
-        print(1, 1)
-    
-    elif a == 3 and result == 2:
-        print(1, 2)
-    else:
-        pass
+test = int(input())
+for x in range(test):
+    num = int(input())
+    print(zero[num], one[num])

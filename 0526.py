@@ -67,7 +67,7 @@
 #     else:
 #         print(a+b)
 
-# #1110
+# #1110 (미해결)
 # a = int(input())
 
 # n = 0
@@ -99,12 +99,6 @@
     #     a = num2 + (a%10)
 
     
-a = '2'
-b = '4'
-print(a+b)
-print(type(a+b))
-print(type("24"))
-print("24" is a,b) 
 
 
 

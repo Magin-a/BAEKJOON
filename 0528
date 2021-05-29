@@ -1,0 +1,86 @@
+#1330
+x = map(int, input().split())
+a, b = x
+if a > b:
+    print(">")
+elif a < b:
+    print("<")
+elif a == b :
+    print("==") 
+
+#9498
+score = int(input())
+if 100 >= score >=90:
+    print("A")
+
+elif 90 > score >= 80:
+    print("B")
+
+elif 80 > score >= 70:
+    print("C")
+
+elif 70 > score >= 60:
+    print("D")
+
+else:
+    print("F")
+
+#2753
+#윤년 평년 계산기
+my_number = input("년도를 입력하세요")
+my_number = int(my_number)
+if my_number% 4 == 0:
+    if my_number%100 == 0:
+        if my_number%400 == 0:
+            print(1)
+        else:
+            print(0)
+    else:
+        print(1)
+else:
+    print(0)
+
+#14681
+x = int(input())
+y = int(input())
+
+if x > 0:
+    if y > 0:
+        print(1)
+
+    else:
+        print(4)
+
+else:
+    if y > 0:
+        print(2)
+
+    else:
+        print(3)
+
+2884
+A = map(int, input().split())
+H, M = A
+
+if M-45 <0:
+    if H == 0:
+        H = 23
+        M = 60 + (M-45)
+
+    else:
+        H -= 1
+        M = 60 + (M-45)
+
+
+else:
+    M -= 45
+if M == 60:
+    M = 0
+
+print(H, M)
+
+#2439
+a = int(input())
+
+for i in range(1,a+1):
+    print(' '*(a-i)+"*"*(i))

@@ -1,0 +1,37 @@
+#2577
+a = int(input())
+b = int(input())
+c = int(input())
+result = a*b*c
+result_list = []
+for i in str(result):
+    result_list.append(i)
+
+print(result_list.count('0'))
+print(result_list.count('1'))
+print(result_list.count('2'))
+print(result_list.count('3'))
+print(result_list.count('4'))
+print(result_list.count('5'))
+print(result_list.count('6'))
+print(result_list.count('7'))
+print(result_list.count('8'))
+print(result_list.count('9'))
+
+#1546
+a = int(input())
+num = int(input().split())
+x= max(num)
+result = float(sum(num)-x)/x*100
+print(result)
+
+#1546
+a = int(input())
+num = list(map(int, input().strip().split()))
+max_num = max(num)
+sum_num = sum(num)
+result = 0
+for i in num:
+    result += (i/max_num)*100
+
+print(result/a)

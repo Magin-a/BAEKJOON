@@ -35,3 +35,23 @@ for i in num:
     result += (i/max_num)*100
 
 print(result/a)
+
+#3052 효율적인 코드
+x = {int(input())%42 for _ in range(10)}
+print(len(x))
+
+#8958
+a = int(input())
+
+for i in range(a):
+    test = input()
+    num = 0
+    score = 0
+    for i in test:
+        if i == 'O':
+            num += 1
+            score += num
+
+        elif i == "X":
+            num = 0
+    print(score)

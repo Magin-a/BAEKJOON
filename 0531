@@ -1,0 +1,13 @@
+#4344
+test_num = int(input())
+for i in range(test_num):
+    result = (map(int, input().split()))
+    student, *arg = result
+    score_avg = sum(arg)/student
+    avg_over = 0
+
+    for j in arg:
+        if score_avg < j:
+            avg_over += 1
+    result = (avg_over/student)*100
+    print("{:.3f}%".format(result))

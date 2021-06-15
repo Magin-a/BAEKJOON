@@ -34,3 +34,38 @@ if count_list.count(max(count_list)) >= 2:
     print("?")
 else:
     print(count_word[count_list.index(max(count_list))])
+
+
+#1152
+a = input().split()
+print(len(a))
+
+#2908
+num = map(str, input().split())
+a, b = num
+a = int(a[::-1])
+b = int(b[::-1])
+
+print(max(a,b))
+
+#5622
+a = list(input())
+result = 0
+for i in a:
+    if i in ('A','B','C'):
+        result += 3
+    elif i in ('D','E','F'):
+        result += 4
+    elif i in ('G','H','I'):
+        result += 5
+    elif i in ('J','K','L'):
+        result += 6
+    elif i in ('M','N','O'):
+        result += 7
+    elif i in ('P','Q','R','S'):
+        result += 8
+    elif i in ('T','U','V'):
+        result += 9
+    elif i in ('W','X','Y','Z'):
+        result += 10
+print(result)

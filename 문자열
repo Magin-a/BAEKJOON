@@ -1,0 +1,36 @@
+#11654(아스키 코드 변환)
+a = input()
+print(ord(a))
+
+#11720(숫자의 합)
+num_count = input()
+number = input()
+result = 0
+for i in number:
+    result += int(i)
+print(result)
+
+#2675
+test_num = int(input())
+for _ in range(test_num):
+    cnt, str_test = input().split()
+    result = ''
+    for i in str_test:
+        result += i * int(cnt)
+    print(result)
+
+#1157(단어공부)
+my_test = input().upper()
+result = list(my_test)
+result_set = set(result)
+count_list = []
+count_word = []
+for a in result_set:
+    word_count = 0
+    x = my_test.count(a)
+    count_list.append(int(x))
+    count_word.append(a)
+if count_list.count(max(count_list)) >= 2:
+    print("?")
+else:
+    print(count_word[count_list.index(max(count_list))])

@@ -69,3 +69,20 @@ for i in a:
     elif i in ('W','X','Y','Z'):
         result += 10
 print(result)
+
+#2941
+word = ["c=","c-","dz=","d-","lj","nj","s=","z="]
+cnt = 0
+cnt2 = 0
+a = input()
+letter = a
+for i in word:
+    if i in a:
+        cnt += a.count(i)
+        a = a.replace(i,' ')
+    else:
+        pass
+a = a.split(' ')
+for j in a:
+    cnt2 += len(j) 
+print(cnt+cnt2)

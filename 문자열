@@ -86,3 +86,19 @@ a = a.split(' ')
 for j in a:
     cnt2 += len(j) 
 print(cnt+cnt2)
+
+#10809
+a = input()
+Eng = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+num = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+start_num = 0
+for i in a:
+    if i in Eng:
+        if num[Eng.index(i)] == -1: 
+            num[Eng.index(i)] = start_num
+            
+        else:
+            pass
+    start_num += 1
+for j in num:
+    print(j, end=' ')

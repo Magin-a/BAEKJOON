@@ -1,0 +1,52 @@
+#1712
+num= map(int, input().split())
+a,b,c = num
+plus = c-b
+if plus > 0:
+    result =  a//plus+1
+    
+else:
+    result = -1
+print(result)
+
+#2292
+num = int(input())
+cnt = 1
+sum = 6
+room_num = 1
+while cnt < num:
+    
+    cnt += sum
+    sum +=6
+    room_num += 1
+print(room_num)
+
+#1193
+my_num = int(input())
+num_cnt = 1
+count = 1
+while my_num > num_cnt:
+    count += 1
+    num_cnt +=count
+result_index = num_cnt - count
+if count%2 == 1:
+    numerator =  count      #분자
+    denominator =  1    #분모
+    result_index += 1
+    gap =  my_num - result_index
+    numerator -= gap
+    denominator += gap
+
+else:
+    numerator = 1
+    denominator = count
+    result_index += 1
+    gap =  my_num - result_index
+    numerator += gap
+    denominator -= gap
+print("{0}/{1}".format(numerator, denominator))
+
+#10757
+num = map(int, input().split())
+a, b = num
+print(a+b)

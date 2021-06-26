@@ -50,3 +50,14 @@ print("{0}/{1}".format(numerator, denominator))
 num = map(int, input().split())
 a, b = num
 print(a+b)
+
+
+#2867
+A, B, V = map(int, input().split())
+day = 0      
+
+if (V-B) % (A-B) != 0:
+    day = ((V-B) // (A-B)) + 1
+else:
+    day = ((V-B) // (A-B))
+print(day)

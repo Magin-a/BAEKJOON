@@ -61,3 +61,29 @@ if (V-B) % (A-B) != 0:
 else:
     day = ((V-B) // (A-B))
 print(day)
+
+
+#1011
+test_num = int(input())
+
+
+for _ in range(test_num):
+    jump = 1
+    cnt = 0
+    start, fin = map(int, input().split())
+    
+    while start < fin:
+        start += jump
+        if fin == start or fin < start :
+            cnt +=1
+            
+        elif fin == start+1:
+            start += 2
+            break
+
+        else:
+            cnt += 1
+            jump += 1
+        
+    
+    print(cnt)

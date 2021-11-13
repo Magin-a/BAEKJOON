@@ -1,3 +1,4 @@
+#트럭
 import sys
 from collections import deque
 

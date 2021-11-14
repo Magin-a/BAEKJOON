@@ -5,6 +5,6 @@
 
 
 [![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=yo7504)](https://solved.ac/pyu990828)
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=pyu990828)](https://solved.ac/pyu990828)
 
 https://www.acmicpc.net/problemset

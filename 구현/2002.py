@@ -26,3 +26,22 @@ while start:
         result += 1
 
 print(result)
+
+
+#2안
+import sys
+from collections import deque
+car_cnt = int(sys.stdin.readline())
+start = deque()
+finish = deque()
+
+for _ in range(car_cnt):
+    start.append(sys.stdin.readline().strip())
+
+for _ in range(car_cnt):
+    finish.append(sys.stdin.readline().strip())
+
+for a, b in enumerate(start):
+    print(a, b)
+
+cnt = 0

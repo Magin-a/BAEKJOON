@@ -19,7 +19,7 @@ def solution(file, wanted, site): #원하는 프린터 순서 찾는 함수
             
             x.popleft()
         else:
-            x.append(x.popleft())
+            x.append(x.popleft())# 처음꺼가 중요도가 가장 큰값이 아니라면 뒤로 보냄
     
     print(cnt) #최종 원하는 프린터 순서 출력
     

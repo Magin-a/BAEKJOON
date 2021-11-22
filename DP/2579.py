@@ -1,60 +1,24 @@
-# #계단오르기
-# import sys
-# num = int(sys.stdin.readline())
-
-# d = [0]*num
-# stair = []
-# for i in range(num):
-#     stair.append(int(sys.stdin.readline()))
-
-# site = 0
-# n = -1
-
-# while d[site] != stair[num-1]:
-#     d[site] = max(stair[n+1], stair[n+2])
-#     site += 1
-#     if max(stair[n+1], stair[n+2]) == stair[n]:
-#         print(max(stair[n+1], stair[n+2]))
-#         n += 1
-
-#     else:
-#         print(max(stair[n+1], stair[n+2]))
-#         n +=2
-
-# print(d)
-
 import sys
-num = int(sys.stdin.readline())
 
-d = [0]*num
+n = int(sys.stdin.readline())
 stair = []
-for i in range(num):
+
+for _ in range(n):
     stair.append(int(sys.stdin.readline()))
 
+d = [0]*n
 d[0] = stair[0]
-site = 1
-n = 0
-treble = 1
 
-while True:
-    if max(stair[n+1], stair[n+2]) == stair[n+1] and treble < 2:
-        d[site] = stair[n+1] + d[site-1]
-        n += 1
-        treble += 1
-        site += 1
+if n <3:
+    d[n-1] = sum(stair)
 
-    else:
-        d[site] = stair[n+2] + d[site-1]
-        treble = 0
-        n +=2
-        site += 1
+else:
+    for x in range(1,n):
+        if x == 1:
+            d[x] = max(stair[x]+d[x-1], stair[x-1])
+            continue
+        d[x] = max(stair[x]+stair[x-1], stair[x]+d[x-2])
 
-    if n == num-1 or n == num-2:
-        if n != num-1:
-            print(d[site-1])+stair.pop()
-            break
-        print(d)
-        print(d[site-1])
-        break
-
-
+    for i in range(3, n):
+        d[i] = max(stair[i]+stair[i-1]+ d[i-3], stair[i]+d[i-2])
+print(d[-1])

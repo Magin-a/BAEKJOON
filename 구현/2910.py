@@ -14,6 +14,5 @@ for num in message:
     
 
 sorted_message = sorted(dic_message.items(), key=lambda x:-x[1])
-print(sorted_message)
-for i in range(len(sorted_message)):
-    print((str(sorted_message[i][0]+" ")*sorted_message[i][1],end=""))
+for a, b in sorted_message:
+    print((str(a)+" ")*b, end="")

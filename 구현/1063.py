@@ -31,9 +31,8 @@ for _ in range(int(n)):
                 stone_y += move_y[num]
     
 
-print(chr(king_y+64), king_x)
-print(chr(stone_y+64), stone_x)
-
+print(chr(king_y+64), king_x) #
+print(chr(stone_y+64), stone_x)#
 
 
 

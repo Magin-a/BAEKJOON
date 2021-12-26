@@ -22,15 +22,18 @@ for _ in range(int(n)):
             continue
         
         stone_x, stone_y = t_stone_x, t_stone_y
+        king_x, king_y = test_x, test_y
+    
     king_x, king_y = test_x, test_y
 
     
 
-print(chr(king_y+64), king_x)
-print(chr(stone_y+64), stone_x)
+print(chr(king_y+64)+str(king_x))
+print(chr(stone_y+64)+str(stone_x))
 
 
 
+#행렬방법으로 구현했기에 위아래 이동은 반대
 # R : 한 칸 오른쪽으로
 # L : 한 칸 왼쪽으로
 # T : 한 칸 아래로

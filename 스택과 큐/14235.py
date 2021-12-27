@@ -17,3 +17,4 @@ for _ in range(n):
     else: #거점지 선물 충전
         for i in range(1,a[0]+1): 
             heapq.heappush(gift, (-a[i], a[i])) # (-a[i], a[i]) 앞에 '-' 추가함으로 큰수기준으로 정렬
+ 

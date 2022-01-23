@@ -3,12 +3,24 @@ import sys
 input = sys.stdin.readline
 
 cnt = int(input())
-graph = [[] for _ in range(cnt)]
+graph = [[] for _ in range(cnt+1)]
+visited = []
+
+
 
 test = int(input())
 for _ in range(test):
     index, link = map(int, input().split())
-    graph[index-1].append(link-1)
-    graph[link-1].append(index-1)
+    graph[index].append(link)
+    graph[link].append(index)
 
 print(graph)
+def dfs(start, graph, visited):
+    for i in graph[start]:
+        if i not in visited:
+            visited.append(i)
+            dfs(i, graph, visited)
+
+
+dfs(1, graph, visited)
+print(len(visited)-1)

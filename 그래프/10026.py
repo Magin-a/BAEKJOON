@@ -23,6 +23,24 @@ def dfs(x, y):
                 if graph[t_x][t_y] == c_color:
                     dfs(t_x, t_y)
 
+def bfs(x, y):
+    q.append([x, y])
+    visited[x][y] = 1
+
+    while q:
+        x,y = q.popleft()
+        for a in range(4):
+            t_x = x + trans_x[a]
+            t_y = y + trans_y[a]
+            if not((0 <= t_x < N) and (0 <= t_y <N)):
+                continue
+            if graph[t_x][t_y] != graph[x][y] or visited[t_x][t_y] == 1:
+                continue
+            visited[t_x][t_y] = 1
+            q.append([t_x, t_y]) 
+
+                    
+                    
 
 for i in range(N):
     for j in range(N):

@@ -14,6 +14,10 @@ for _ in range(cnt):
     graph[x].append(y)
     graph[y].append(x)
 
+for i in range(1, zum+1):
+    graph[i].sort()
+
+
 def dfs(start, graph, visited):
     visited.append(start)
     for i in graph[start]:

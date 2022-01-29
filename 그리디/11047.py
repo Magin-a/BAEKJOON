@@ -1,20 +1,25 @@
-# 프로그램 소스코드 입력
+#다시 풀이
 # 동전0
 import sys
-n, k = map(int, sys.stdin.readline().split())
-find = 0
-count = 0
+from collections import deque
+input = sys.stdin.readline
+
+cnt, price = map(int, input().split())
+result = 0
 coin = []
-for _ in range(n):
-    A = int(sys.stdin.readline())
-    coin.append(A)
+for _ in range(cnt):
+    coin.append(int(input()))
 
-coin.append(k)
-coin.sort()
-find = coin.index(k)
+coin.sort(reverse= True)
 
-for j in range(find-1,-1,-1):
-    count += k//coin[j]
-    k %= coin[j]
+coin = deque(coin)
+while coin:
+    current = coin.popleft()
+    if current > price:
+        continue
 
-print(count)
+    result += (price//current)
+    price %= current
+
+
+print(result)

@@ -15,6 +15,6 @@ while q:
         q.rotate(-data)
 
     elif data > 0:
-        q.rotate(data-1)
+        q.rotate(-(data-1))
 
-print(result)
+print(" ".join(map(str, result)))

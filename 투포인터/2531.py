@@ -29,4 +29,4 @@ for i in range(n):
     result = max(result, total) #최대 값 갱신
     data.rotate(-1) #초밥 회전
 
-print(result)
+print(result) 

@@ -14,4 +14,4 @@ while q:
         q.rotate(-data)
 
     elif data > 0:# rotate(양수) => index = -1 앞으로 당기기
-        q.rotate(-(data-1)) 
+        q.rotate(-(data-1))

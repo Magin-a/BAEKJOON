@@ -2,20 +2,12 @@
 import sys
 input = sys.stdin.readline
 
-t = int(input())
-
-goals = []
-
-for _ in range(3):
-    goals.append(int(input()))
+goals = [1, 2, 4]
 
 
-goal= [0] * (max(goals)+1)
-goal[0] = 1
+for _ in range(int(input())):
 
-for num in range(1, 4):
-    for n in range(max(goals)+1):
-        goal[n] += goal[n-num]
-
-for x in goals:
-    print(goal[x])
+    n = int(input())
+    for i in range(len(goals), n):
+        goals.append((goals[i-3] + goals[i-2] + goals[i-1])%1000000009)
+    print(goals[i])

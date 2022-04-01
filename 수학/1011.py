@@ -10,3 +10,4 @@ for _ in range(t):
     len = fin-start
 
     print(int((len*4-3)**.5))
+    #다른 풀이 해볼 것

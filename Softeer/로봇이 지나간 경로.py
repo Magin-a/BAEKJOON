@@ -2,12 +2,16 @@
 #사수가 조작한 로봇이 i행 j열을 방문했다면 #이고, 방문하지 않았다면 .이다.
 
 import sys
+from collections import deque
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
+n, m = map(int, input().split()) # column, row
 
 find_x = [-1, 0, 1, 0]
 find_y = [0, -1, 0, 1]
+direction_str = ['<', '^', '>', 'v']
+s_state = 1
+q = deque()
 
 graph = []
 for _ in range(n):
@@ -43,27 +47,35 @@ s_x, s_y = find()
 
 print(s_x, s_y)
 print(graph[s_y][s_x])
+q.append([s_y, s_x])# 시작점 
 
-#시작 방향 잡기
-for i in range(4):
-    t_x = s_x + find_x[i]
-    t_y = s_y + find_y[i]
+# 이동 시작
+while q:
+    s_y, s_x = q.popleft()
+    graph[s_y][s_x] = '.'
 
-    if graph[t_y][t_x] == '#':
-        start_d = [find_x, find_y]
-        if i == 0:
-            print('<')
+    for i in range(4):
+        t_y = s_y + find_y[i]
+        t_x = s_x + find_x[i]
 
-        elif i == 1:
-            print('^')
+        if 0> t_x or t_x >= m or 0 > t_y or t_y >= n or  graph[t_y][t_x] != '#':         
+            continue
 
-        elif i == 2:
-            print('>')
+        elif  graph[t_y][t_x] == '#':
+            #방향 잡기
+            if direction_str[s_state] != direction_str[i]:
+                left, right = s_state-1, s_state+1
+                if right == 4:
+                    right = 0
 
-        elif i == 3:
-            print('v')
+                if direction_str[left] == direction_str[i]:
+                    print('L',end='')
 
-        break
-
-
-
+                elif direction_str[right] == direction_str[i]:
+                    print('R',end='')
+            #방문처리
+            graph[t_y][t_x] = '.'
+            print('AA', end='')
+            graph[t_y + find_y[i]][t_x + find_x[i]]= '.'
+            q.append([t_y + find_y[i], t_x + find_x[i]])
+            s_state = i #현재 바라보는 방향 갱신

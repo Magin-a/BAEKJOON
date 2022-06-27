@@ -10,7 +10,7 @@ n, m = map(int, input().split()) # column, row
 find_x = [-1, 0, 1, 0]
 find_y = [0, -1, 0, 1]
 direction_str = ['<', '^', '>', 'v']
-s_state = 1
+
 q = deque()
 
 graph = []
@@ -45,8 +45,15 @@ def find(x=0, y=0):
 
 s_x, s_y = find()
 
-print(s_x, s_y)
-print(graph[s_y][s_x])
+print(s_y+1, s_x+1)
+for i in range(4):
+    y, x = s_y+find_y[i], s_x+find_x[i]
+    if 0> x or x >= m or 0 > y or y >= n or  graph[y][x] != '#':         
+            continue
+    if graph[y][x] == '#':
+        s_state = i
+        print(direction_str[i])
+        break
 q.append([s_y, s_x])# 시작점 
 
 # 이동 시작
@@ -75,7 +82,7 @@ while q:
                     print('R',end='')
             #방문처리
             graph[t_y][t_x] = '.'
-            print('AA', end='')
+            print('A', end='')
             graph[t_y + find_y[i]][t_x + find_x[i]]= '.'
             q.append([t_y + find_y[i], t_x + find_x[i]])
             s_state = i #현재 바라보는 방향 갱신

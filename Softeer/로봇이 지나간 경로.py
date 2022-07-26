@@ -13,10 +13,7 @@ direction_str = ['<', '^', '>', 'v']
 
 q = deque()
 
-graph = []
-for _ in range(n):
-    make = list(input().strip())
-    graph.append(make)
+graph = [list(sys.stdin.readline().rstrip()) for _ in range(n)]
 
 #시작점 찾기
 def find(x=0, y=0):
@@ -30,7 +27,7 @@ def find(x=0, y=0):
 
             for a in range(4):
                 f_x = x + find_x[a]
-                f_y =  + find_y[a]
+                f_y = y + find_y[a]
 
                 if 0> f_x or f_x >= m or 0 >f_y or f_y >= n: 
                     cnt+=1

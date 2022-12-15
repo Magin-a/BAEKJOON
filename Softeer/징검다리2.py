@@ -1,24 +1,15 @@
 #징검다리2
 import sys
-input =sys.stdin.readline
+input = sys.stdin.readline
 
 n = int(input())
+brige = list(map(int, input().split()))
 
-rock = list(map(int, input().split()))
-
-up = [False] * n
-down = [False] * n
+col = []
 
 for i in range(n-1):
-    s, f = rock[i], rock[i+1]
-    if s < f:
-        up[i] = True
-
-    if s > f:
-        down[i] = True
-
-if rock[n-2] > rock[n-1]:
-        down[n-1] = True
-
-print(up)
-print(down)
+    a, b = brige[i], brige[i+1]
+    col.append(a-b)
+    
+for j in col:
+    if 

@@ -13,3 +13,4 @@ https://www.acmicpc.net/problemset
 
 #코테 기록
 - 2022.07.01 2022 **22 현대모비스 알고리즘 경진대회** 코테 참여. 2sovled.(총5문제) Python
+-pull test
